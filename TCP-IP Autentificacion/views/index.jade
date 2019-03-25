@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  if error
+    h1 = message
+  else
+    h1 Validation app
+    p Welcome to #{title}
+    #validation
+    #form
+      p Validate User
+      form(onsubmit='return validateUser(this)')
+        input#username(type='text', placeholder='Write your username')
+        input#password(type='password', placeholder='Write your password')
+        input(type='submit', value='validate')
+    #addUser
+    #form2
+      p Add User
+      form(onsubmit='return addUser(this)')
+        input#username2(type='text', placeholder='Write your username')
+        input#password2(type='password', placeholder='Write your password')
+        input(type='submit', value='add')
+    #form3
+      form(onsubmit='return persistir(this)')
+        input(type='submit', value='persistir')

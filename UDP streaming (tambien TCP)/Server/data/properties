@@ -1,0 +1,4 @@
+port=1010
+maxThreads=300
+pathTimes=./data/reports/reportTimes.csv
+pathProcess=./data/reports/reportProcess.csv

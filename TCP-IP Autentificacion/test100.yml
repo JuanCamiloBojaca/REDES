@@ -1,0 +1,16 @@
+config:
+  target: "http://localhost:3000"
+  phases:
+    - duration: 1
+      arrivalRate: 100
+scenarios:
+- name: 'validation user'
+  weight: 150
+  engine: "socketio"
+  flow:
+    - get: 
+        url: "/"
+    - emit:
+        channel: "new-message"
+        data: { "username": "Michael", "password": 123}
+    - think: 10
